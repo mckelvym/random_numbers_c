@@ -32,3 +32,30 @@ $ ./numbers
 11101110111100010100110110111100111000100001110101001011010000100101001010101001
 00011100011110100010001001001000100000110000100111000101001011011100111010010001
 ```
+
+## Docker Environment
+
+Build a basic Docker image to compile and run the code. Save the following to `Dockerfile`:
+
+```dockerfile
+FROM ubuntu:trusty
+
+RUN apt-get update; apt-get upgrade -y
+RUN apt-get install -y build-essential linux-headers-generic bash-completion emacs
+
+CMD ["/bin/bash"]
+```
+
+Then run:
+
+```bash
+docker build -t c_docker .
+```
+
+In this cloned folder, then run:
+
+```bash
+docker run -it -v $PWD:/data c_docker
+```
+
+Follow the "Build" and "Run" steps above.
