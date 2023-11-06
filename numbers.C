@@ -5,6 +5,7 @@
 #include <ctime>
 #include <string>
 #include <csignal>
+#include <unistd.h>
 
 using namespace std;
 
